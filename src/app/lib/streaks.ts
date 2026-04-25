@@ -3,8 +3,8 @@ function getTodayDate(): string {
 }
 
 function getPreviousDate(date: string): string {
-  const current = new Date(`${date}T00:00:00`);
-  current.setDate(current.getDate() - 1);
+  const current = new Date(`${date}T00:00:00.000Z`);
+  current.setUTCDate(current.getUTCDate() - 1);
   return current.toISOString().split('T')[0];
 }
 
@@ -12,19 +12,18 @@ export function calculateCurrentStreak(
   completions: string[],
   today: string = getTodayDate()
 ): number {
-  const uniqueDates = Array.from(new Set(completions)).sort();
+  const completedDates = new Set(completions);
 
-  if (!uniqueDates.includes(today)) {
+  if (!completedDates.has(today)) {
     return 0;
   }
 
-  const completedDates = new Set(uniqueDates);
   let streak = 0;
-  let currentDate = today;
+  let cursor = today;
 
-  while (completedDates.has(currentDate)) {
+  while (completedDates.has(cursor)) {
     streak += 1;
-    currentDate = getPreviousDate(currentDate);
+    cursor = getPreviousDate(cursor);
   }
 
   return streak;
