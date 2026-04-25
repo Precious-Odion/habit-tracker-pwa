@@ -67,7 +67,7 @@ export default function HabitForm({
             data-testid="habit-name-input"
             value={name}
             onChange={(event) => setName(event.target.value)}
-            className="mt-1 w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200"
+            className="mt-1 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200"
             placeholder="Drink Water"
           />
         </div>
@@ -84,8 +84,7 @@ export default function HabitForm({
             data-testid="habit-description-input"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
-            className="mt-1 min-h-24 w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200"
-            placeholder="Optional habit description"
+            className="mt-1 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200"
           />
         </div>
 
