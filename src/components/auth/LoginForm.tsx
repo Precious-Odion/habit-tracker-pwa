@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { login } from "../../components/lib/auth";
+import { login } from "../../lib/auth";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -31,7 +31,11 @@ export default function LoginForm() {
           Log in to continue your habits.
         </p>
 
-        {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
+        {error && (
+          <p className="mt-4 text-sm text-red-600" aria-live="polite">
+            {error}
+          </p>
+        )}
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>

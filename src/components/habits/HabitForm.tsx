@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { validateHabitName } from "../lib/validators";
-import type { Habit } from "../lib/habits";
+import { validateHabitName } from "../../lib/validators";
+import type { Habit } from "../../lib/habits";
 
 type HabitFormProps = {
   initialHabit?: Habit | null;
@@ -55,7 +55,9 @@ export default function HabitForm({
       </h2>
 
       {(error || externalError) && (
-        <p className="mt-3 text-sm text-red-600">{error || externalError}</p>
+        <p className="mt-3 text-sm text-red-600" aria-live="polite">
+          {error || externalError}
+        </p>
       )}
 
       <div className="mt-4 space-y-4">

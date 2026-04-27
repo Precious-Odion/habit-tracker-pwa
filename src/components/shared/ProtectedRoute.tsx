@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getCurrentSession } from "../../components/lib/auth";
+import { getCurrentSession } from "../../lib/auth";
 
 type ProtectedRouteProps = {
   children: React.ReactNode;

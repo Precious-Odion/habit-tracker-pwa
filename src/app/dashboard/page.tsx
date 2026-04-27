@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import ProtectedRoute from "../../components/shared/ProtectedRoute";
 import HabitForm from "../../components/habits/HabitForm";
 import HabitList from "../../components/habits/HabitList";
-import { getCurrentSession, logout } from "../../components/lib/auth";
-import { getHabits, saveHabits } from "../../components/lib/storage";
-import { toggleHabitCompletion, type Habit } from "../../components/lib/habits";
+import { getCurrentSession, logout } from "../../lib/auth";
+import { getHabits, saveHabits } from "../../lib/storage";
+import { toggleHabitCompletion, type Habit } from "../../lib/habits";
 
 function getTodayDate(): string {
   return new Date().toISOString().split("T")[0];

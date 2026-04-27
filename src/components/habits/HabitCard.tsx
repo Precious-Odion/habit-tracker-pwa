@@ -1,8 +1,8 @@
 "use client";
 
-import { calculateCurrentStreak } from "../lib/streaks";
-import { getHabitSlug } from "../lib/slug";
-import type { Habit } from "../lib/habits";
+import { calculateCurrentStreak } from "../../lib/streaks";
+import { getHabitSlug } from "../../lib/slug";
+import type { Habit } from "../../lib/habits";
 
 type HabitCardProps = {
   habit: Habit;

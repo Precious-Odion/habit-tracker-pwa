@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import SplashScreen from "../components/shared/SplashScreen";
-import { getCurrentSession } from "../components/lib/auth";
+import { getCurrentSession } from "../lib/auth";
 
 export default function HomePage() {
   const router = useRouter();
