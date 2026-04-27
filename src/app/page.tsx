@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import SplashScreen from "./components/shared/SplashScreen";
-import { getCurrentSession } from "./lib/auth";
+import SplashScreen from "../components/shared/SplashScreen";
+import { getCurrentSession } from "../components/lib/auth";
 
 export default function HomePage() {
   const router = useRouter();
