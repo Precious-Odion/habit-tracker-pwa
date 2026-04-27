@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { validateHabitName } from "../../lib/validators";
-import type { Habit } from "../../lib/habits";
+import { validateHabitName } from "../lib/validators";
+import type { Habit } from "../lib/habits";
 
 type HabitFormProps = {
   initialHabit?: Habit | null;

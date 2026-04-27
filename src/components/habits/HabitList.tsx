@@ -1,7 +1,7 @@
 "use client";
 
 import HabitCard from "./HabitCard";
-import type { Habit } from "../../lib/habits";
+import type { Habit } from "../lib/habits";
 
 type HabitListProps = {
   habits: Habit[];
