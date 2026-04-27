@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { cleanup } from "@testing-library/react";
-import DashboardPage from "../../app/dashboard/page";
+import DashboardPage from "../../src/app/dashboard/page";
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import LoginForm from "../../components/auth/LoginForm";
-import SignupForm from "../../components/auth/SignupForm";
+import LoginForm from "../../src/components/auth/LoginForm";
+import SignupForm from "../../src/components/auth/SignupForm";
 
 import { cleanup } from "@testing-library/react";
 import { afterEach } from "vitest";
