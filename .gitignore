@@ -8,9 +8,6 @@
 test-results
 playwright-report
 
-# Coverage
-coverage
-
 # Dependencies
 node_modules
 .pnp
