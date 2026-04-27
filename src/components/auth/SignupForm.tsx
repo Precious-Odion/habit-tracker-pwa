@@ -18,7 +18,14 @@ export default function SignupForm() {
       return;
     }
 
-    const result = signup(email.trim(), password);
+    const emailValue = email.trim();
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    const result = signup(emailValue, password);
 
     if (!result.success) {
       setError(result.error ?? "User already exists");
