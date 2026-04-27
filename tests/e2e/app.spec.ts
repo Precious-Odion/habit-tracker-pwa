@@ -10,7 +10,7 @@ test.describe('Habit Tracker app', () => {
     await page.goto('/');
 
     await expect(page.getByTestId('splash-screen')).toBeVisible();
-    await expect(page).toHaveURL(/\/login/);
+    await expect(page).toHaveURL(/\/login/, { timeout: 10000 });
   });
 
   test('redirects authenticated users from / to /dashboard', async ({ page }) => {

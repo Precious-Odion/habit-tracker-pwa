@@ -8,6 +8,7 @@ export default function SignupForm() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -76,14 +77,26 @@ export default function SignupForm() {
             >
               Password
             </label>
-            <input
-              id="signup-password"
-              data-testid="auth-signup-password"
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              className="mt-1 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200"
-            />
+
+            <div className="relative mt-1">
+              <input
+                id="login-password"
+                data-testid="auth-signup-password"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                className="w-full rounded-xl border border-gray-300 px-4 py-3 pr-16 text-gray-900 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200"
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword((current) => !current)}
+                className="absolute inset-y-0 right-3 flex items-center text-sm font-semibold text-green-700 focus:outline-none focus:ring-2 focus:ring-green-300"
+                aria-label={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
+            </div>
           </div>
 
           <button
