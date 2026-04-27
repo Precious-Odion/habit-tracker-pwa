@@ -6,6 +6,7 @@ import type { Habit } from "../lib/habits";
 
 type HabitFormProps = {
   initialHabit?: Habit | null;
+  externalError?: string;
   onSave: (habitData: {
     name: string;
     description: string;
@@ -16,6 +17,7 @@ type HabitFormProps = {
 
 export default function HabitForm({
   initialHabit,
+  externalError,
   onSave,
   onCancel,
 }: HabitFormProps) {
@@ -52,7 +54,9 @@ export default function HabitForm({
         {initialHabit ? "Edit habit" : "Create habit"}
       </h2>
 
-      {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
+      {(error || externalError) && (
+        <p className="mt-3 text-sm text-red-600">{error || externalError}</p>
+      )}
 
       <div className="mt-4 space-y-4">
         <div>

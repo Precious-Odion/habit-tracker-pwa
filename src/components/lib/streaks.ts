@@ -12,18 +12,20 @@ export function calculateCurrentStreak(
   completions: string[],
   today: string = getTodayDate()
 ): number {
-  const completedDates = new Set(completions);
+  const uniqueSortedCompletions = Array.from(new Set(completions)).sort();
 
-  if (!completedDates.has(today)) {
+  if (!uniqueSortedCompletions.includes(today)) {
     return 0;
   }
 
-  let streak = 0;
-  let cursor = today;
+  const completedDates = new Set(uniqueSortedCompletions);
 
-  while (completedDates.has(cursor)) {
+  let streak = 0;
+  let currentDate = today;
+
+  while (completedDates.has(currentDate)) {
     streak += 1;
-    cursor = getPreviousDate(cursor);
+    currentDate = getPreviousDate(currentDate);
   }
 
   return streak;

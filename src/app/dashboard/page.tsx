@@ -21,6 +21,8 @@ export default function DashboardPage() {
   const [editingHabit, setEditingHabit] = useState<Habit | null>(null);
   const [habitToDelete, setHabitToDelete] = useState<Habit | null>(null);
 
+  const [formError, setFormError] = useState("");
+
   const session = getCurrentSession();
   const today = getTodayDate();
 
@@ -55,6 +57,19 @@ export default function DashboardPage() {
     frequency: "daily";
   }) {
     if (!session) return;
+
+    const duplicateHabit = habits.some(
+      (habit) =>
+        habit.name.toLowerCase() === habitData.name.toLowerCase() &&
+        habit.id !== editingHabit?.id,
+    );
+
+    if (duplicateHabit) {
+      setFormError("A habit with this name already exists");
+      return;
+    }
+
+    setFormError("");
 
     if (editingHabit) {
       const updatedHabits = habits.map((habit) =>
@@ -176,6 +191,7 @@ export default function DashboardPage() {
               type="button"
               onClick={() => {
                 setEditingHabit(null);
+                setFormError("");
                 setShowForm(true);
               }}
               className="rounded-xl bg-green-600 px-4 py-3 text-sm font-semibold text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300"
@@ -188,10 +204,12 @@ export default function DashboardPage() {
             {showForm && (
               <HabitForm
                 initialHabit={editingHabit}
+                externalError={formError}
                 onSave={handleSaveHabit}
                 onCancel={() => {
                   setShowForm(false);
                   setEditingHabit(null);
+                  setFormError("");
                 }}
               />
             )}
