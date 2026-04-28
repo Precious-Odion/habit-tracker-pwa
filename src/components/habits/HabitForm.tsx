@@ -25,6 +25,7 @@ export default function HabitForm({
   const [description, setDescription] = useState(
     initialHabit?.description ?? "",
   );
+
   const [error, setError] = useState("");
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {

@@ -39,9 +39,11 @@ src/
     globals.css
     layout.tsx
     page.tsx
+    not-found.tsx
     login/page.tsx
     signup/page.tsx
     dashboard/page.tsx
+
 
   components/
     auth/

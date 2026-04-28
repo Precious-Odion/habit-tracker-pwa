@@ -25,7 +25,7 @@ function getHabitEmoji(name: string): string {
   )
     return "💪";
   if (value.includes("run") || value.includes("walk")) return "🏃";
-  if (value.includes("meditat")) return "🧘";
+  if (value.includes("meditate")) return "🧘";
   if (value.includes("journal") || value.includes("write")) return "✍️";
   if (value.includes("study") || value.includes("learn")) return "🎓";
   if (value.includes("sleep")) return "😴";

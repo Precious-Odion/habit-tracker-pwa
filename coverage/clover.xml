@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1777320577052" clover="3.2.0">
-  <project timestamp="1777320577053" name="All files">
+<coverage generated="1777320912846" clover="3.2.0">
+  <project timestamp="1777320912847" name="All files">
     <metrics statements="26" coveredstatements="25" conditionals="9" coveredconditionals="9" methods="6" coveredmethods="5" elements="41" coveredelements="39" complexity="0" loc="26" ncloc="26" packages="1" files="4" classes="4"/>
     <file name="habits.ts" path="C:\Users\Dreadhead\Documents\GitHub\habit-tracker-pwa\src\lib\habits.ts">
       <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
