@@ -57,6 +57,8 @@ src/
       SplashScreen.tsx
       ProtectedRoute.tsx
       ServiceWorkerRegister.tsx
+      ThemeProvider.tsx
+      ThemeToggle.tsx
 
   lib/
     auth.ts
