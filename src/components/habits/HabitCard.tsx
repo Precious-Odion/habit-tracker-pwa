@@ -176,7 +176,6 @@ export default function HabitCard({
                     ? "var(--green-accent)"
                     : "transparent",
                   color: "#fff",
-                  focusRingColor: "var(--green-accent)",
                 }}
               >
                 {isCompletedToday && (

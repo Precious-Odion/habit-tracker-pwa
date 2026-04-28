@@ -12,12 +12,8 @@ export default function HomePage() {
     const timer = window.setTimeout(() => {
       const session = getCurrentSession();
 
-      if (session) {
-        router.replace("/dashboard");
-      } else {
-        router.replace("/login");
-      }
-    }, 1000);
+      router.replace(session ? "/dashboard" : "/login");
+    }, 900);
 
     return () => window.clearTimeout(timer);
   }, [router]);

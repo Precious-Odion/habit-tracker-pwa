@@ -55,5 +55,12 @@ export function logout() {
 }
 
 export function getCurrentSession() {
-  return getSession();
+  if (typeof window === "undefined") return null;
+
+  try {
+    const raw = localStorage.getItem("habit-tracker-session");
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
 }
