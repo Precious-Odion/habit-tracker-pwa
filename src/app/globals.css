@@ -1,27 +1,117 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base: #f0faf4;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fffe;
+  --bg-header: #16a34a;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --border-focus: #16a34a;
+  --green-accent: #16a34a;
+  --green-light: #dcfce7;
+  --green-mid: #86efac;
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-card-hover: 0 4px 12px 0 rgb(0 0 0 / 0.10);
+  --input-bg: #ffffff;
+  --modal-overlay: rgb(0 0 0 / 0.45);
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #111827;
-
-  --font-sans: ui-sans-serif, system-ui;
-  --font-mono: ui-monospace, monospace;
+[data-theme="dark"] {
+  --bg-base: #0d1117;
+  --bg-card: #161b22;
+  --bg-card-hover: #1c2128;
+  --bg-header: #166534;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --border: #30363d;
+  --border-focus: #22c55e;
+  --green-accent: #22c55e;
+  --green-light: #162820;
+  --green-mid: #22543d;
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.4);
+  --shadow-card-hover: 0 4px 14px 0 rgb(0 0 0 / 0.5);
+  --input-bg: #0d1117;
+  --modal-overlay: rgb(0 0 0 / 0.7);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  transition: background 0.25s ease, color 0.25s ease;
+  min-height: 100dvh;
+}
+
+.habit-card {
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.habit-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-1px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--green-accent);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.emoji-scroll {
+  scrollbar-width: none;
+}
+.emoji-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.swatch-active {
+  outline: 2px solid var(--green-accent);
+  outline-offset: 2px;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeSlideIn 0.28s ease forwards;
+}
+
+@keyframes splashPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+.splash-icon {
+  animation: splashPulse 1.6s ease-in-out infinite;
 }
