@@ -81,7 +81,8 @@ export function getHabitEmoji(name: string): string {
 }
 
 function isDarkMode(): boolean {
-  if (typeof window === "undefined") return false;
+  if (typeof window === "undefined" || typeof document === "undefined")
+    return false;
   return document.documentElement.getAttribute("data-theme") === "dark";
 }
 
@@ -123,7 +124,6 @@ export default function HabitCard({
 
       <div className="p-4">
         <div className="flex items-start gap-3">
-          {/* Emoji avatar */}
           <div
             className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl select-none"
             style={{
@@ -134,7 +134,6 @@ export default function HabitCard({
             {isCompletedToday ? "✅" : emoji}
           </div>
 
-          {/* Content */}
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
@@ -159,7 +158,6 @@ export default function HabitCard({
                 )}
               </div>
 
-              {/* Complete toggle circle */}
               <button
                 data-testid={`habit-complete-${slug}`}
                 type="button"
