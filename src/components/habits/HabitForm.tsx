@@ -100,7 +100,6 @@ export default function HabitForm({
         boxShadow: "var(--shadow-card)",
       }}
     >
-      {/* Color accent bar */}
       <div style={{ height: "4px", background: palette.accent }} />
 
       <div className="p-5 space-y-5">
@@ -121,7 +120,6 @@ export default function HabitForm({
           </p>
         )}
 
-        {/* Emoji + Name row */}
         <div>
           <label
             htmlFor="habit-name"
@@ -131,7 +129,6 @@ export default function HabitForm({
             Habit name
           </label>
           <div className="flex gap-2 items-center">
-            {/* Emoji trigger */}
             <button
               type="button"
               onClick={() => setShowEmojiPicker((v) => !v)}
@@ -162,7 +159,6 @@ export default function HabitForm({
             />
           </div>
 
-          {/* Emoji picker panel */}
           {showEmojiPicker && (
             <div
               className="mt-2 rounded-xl p-3"
@@ -219,7 +215,6 @@ export default function HabitForm({
           )}
         </div>
 
-        {/* Description */}
         <div>
           <label
             htmlFor="habit-description"
@@ -253,7 +248,6 @@ export default function HabitForm({
           />
         </div>
 
-        {/* Color picker */}
         <div>
           <p
             className="text-xs font-semibold mb-2 uppercase tracking-wide"
@@ -293,7 +287,6 @@ export default function HabitForm({
           </div>
         </div>
 
-        {/* Frequency (hidden but required by spec) */}
         <select
           id="habit-frequency"
           data-testid="habit-frequency-select"
@@ -305,7 +298,6 @@ export default function HabitForm({
           <option value="daily">Daily</option>
         </select>
 
-        {/* Action buttons */}
         <div className="flex gap-2 pt-1">
           <button
             data-testid="habit-save-button"

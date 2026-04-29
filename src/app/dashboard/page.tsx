@@ -154,12 +154,10 @@ export default function DashboardPage() {
         className="min-h-screen pb-12"
         style={{ background: "var(--bg-base)" }}
       >
-        {/* Header */}
         <header
           className="relative overflow-hidden px-4 pt-10 pb-6"
           style={{ background: "var(--green-accent)" }}
         >
-          {/* Decorative blobs */}
           <div
             className="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full"
             style={{ background: "rgba(255,255,255,0.10)" }}
@@ -170,7 +168,6 @@ export default function DashboardPage() {
           />
 
           <div className="relative mx-auto max-w-xl">
-            {/* Top row: app name + controls */}
             <div className="flex items-center justify-between gap-3 mb-5">
               <span
                 className="text-xs font-bold uppercase tracking-widest"
@@ -207,7 +204,6 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            {/* Greeting */}
             <div>
               <h1 className="text-2xl font-extrabold text-white leading-tight">
                 Stay consistent. 🌿
@@ -220,7 +216,6 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            {/* Progress pill */}
             {habits.length > 0 && (
               <div
                 className="mt-4 flex items-center gap-3 rounded-xl px-4 py-3"
@@ -254,9 +249,7 @@ export default function DashboardPage() {
           </div>
         </header>
 
-        {/* Body */}
         <div className="mx-auto max-w-xl px-4">
-          {/* Toolbar */}
           <div className="mt-5 mb-4 flex items-center justify-between gap-3">
             <div>
               <h2
@@ -299,7 +292,6 @@ export default function DashboardPage() {
             </button>
           </div>
 
-          {/* Form */}
           {showForm && (
             <div className="mb-5">
               <HabitForm
@@ -315,7 +307,6 @@ export default function DashboardPage() {
             </div>
           )}
 
-          {/* List */}
           <HabitList
             habits={habits}
             today={today}
@@ -325,7 +316,6 @@ export default function DashboardPage() {
           />
         </div>
 
-        {/* Delete modal */}
         {habitToDelete && (
           <div
             className="fixed inset-0 z-50 flex items-end sm:items-center justify-center px-4 pb-4 sm:pb-0"

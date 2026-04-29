@@ -96,7 +96,6 @@ export default function HabitCard({
   const isCompletedToday = habit.completions.includes(today);
   const streak = calculateCurrentStreak(habit.completions, today);
 
-  // Support optional color/emoji fields stored on habit
   const colorKey = (habit as Habit & { color?: string }).color ?? DEFAULT_COLOR;
   const customEmoji = (habit as Habit & { emoji?: string }).emoji;
   const emoji = customEmoji ?? getHabitEmoji(habit.name);
@@ -188,7 +187,6 @@ export default function HabitCard({
               </button>
             </div>
 
-            {/* Tags row */}
             <div className="mt-2 flex items-center gap-1.5 flex-wrap">
               <span
                 className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold"
@@ -280,7 +278,6 @@ export default function HabitCard({
 
           <div className="flex-1" />
 
-          {/* Complete button — right-aligned, compact */}
           <button
             data-testid={`habit-complete-${slug}-btn`}
             type="button"

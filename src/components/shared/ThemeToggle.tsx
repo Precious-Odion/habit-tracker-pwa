@@ -19,7 +19,6 @@ export default function ThemeToggle() {
       }}
     >
       {isDark ? (
-        /* Sun icon for light mode */
         <svg
           width="18"
           height="18"
@@ -42,7 +41,6 @@ export default function ThemeToggle() {
           <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
         </svg>
       ) : (
-        /* Moon icon for dark mode */
         <svg
           width="17"
           height="17"

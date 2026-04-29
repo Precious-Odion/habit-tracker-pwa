@@ -10,14 +10,12 @@ vi.mock("next/navigation", () => ({
   }),
 }));
 
-// clean DOM after each test
 afterEach(() => cleanup());
 
 describe("habit form", () => {
   beforeEach(() => {
     localStorage.clear();
 
-    // create fake logged-in user session
     localStorage.setItem(
       "habit-tracker-session",
       JSON.stringify({
@@ -26,7 +24,6 @@ describe("habit form", () => {
       }),
     );
 
-    // empty habits
     localStorage.setItem("habit-tracker-habits", JSON.stringify([]));
   });
 

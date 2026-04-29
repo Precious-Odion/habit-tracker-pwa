@@ -1,4 +1,4 @@
-import { getUsers, saveUsers, saveSession, clearSession, getSession } from './storage';
+import { getUsers, saveUsers, saveSession, clearSession } from './storage';
 
 export function signup(email: string, password: string) {
   const users = getUsers();
