@@ -18,6 +18,24 @@ The implementation strictly follows the provided technical document and is valid
 
 ---
 
+## ✨ Additional Features
+
+The following enhancements were implemented beyond the base technical specification:
+
+### 🎨 Habit Customization
+
+- Emoji picker for each habit (visual identity per habit)
+- Color picker for habit categorization and UI personalization
+- Dynamic habit card theming based on selected color
+
+### 🌙 Theme Support
+
+- Light mode and dark mode toggle
+- Theme preference persisted locally in localStorage
+- UI adapts across all core screens (login, signup, dashboard)
+
+These features improve usability and visual clarity while remaining fully compliant with the local-only persistence requirement.
+
 ## ⚙️ Tech Stack
 
 - **Next.js (App Router)**
@@ -171,13 +189,23 @@ This ensures faster execution and better test isolation while maintaining the re
 
 The application uses **localStorage** as a deterministic persistence layer.
 
+### ⚠️ Important Limitation
+
+Data is stored locally per browser using localStorage.  
+Cross-device or cross-browser synchronization is not supported.
+
+Each browser instance maintains its own isolated dataset.
+
+---
+
 ### Keys
 
-```txt
+````txt
 habit-tracker-users
 habit-tracker-session
 habit-tracker-habits
-```
+
+
 
 ### Data Structures
 
@@ -190,7 +218,7 @@ habit-tracker-habits
   password: string;
   createdAt: string;
 }
-```
+````
 
 **Session**
 
@@ -212,6 +240,8 @@ habit-tracker-habits
   frequency: 'daily';
   createdAt: string;
   completions: string[];
+  emoji?: string;
+  color?: string;
 }
 ```
 
@@ -220,7 +250,7 @@ habit-tracker-habits
 - IDs are generated using `crypto.randomUUID()` (globally unique)
 - Completion dates are stored as **ISO strings (YYYY-MM-DD)**
 - Duplicate completion dates are prevented
-- Data is scoped per user
+- Data is scoped per user per browser
 
 ---
 
@@ -273,6 +303,13 @@ This design ensures compliance with the requirement:
 - Offline support after first load
 - No hard crash when offline
 
+### 🎨 UI Enhancements
+
+- Emoji picker integrated into habit creation/editing flow
+- Color picker allows users to visually categorize habits
+- Dark mode / light mode toggle implemented across the application
+- Theme preference persisted using localStorage
+
 ### Offline Behavior
 
 The service worker caches:
@@ -287,6 +324,7 @@ This allows the app shell to render even without network connectivity.
 
 ## ⚖️ Trade-offs and Limitations
 
+- No multi-device synchronization due to localStorage-based architecture (per requirement constraint)
 - **No backend**: authentication is local and not secure (intended for this stage)
 - **No multi-device sync**: data is tied to browser storage
 - **Basic service worker strategy**: focuses on app shell caching, not full offline data sync

@@ -12,7 +12,6 @@ type HabitCardProps = {
   onDelete: (habit: Habit) => void;
 };
 
-/* ── Palette: each color has a bg, a darker border/accent, and text color ── */
 export const HABIT_COLORS: Record<
   string,
   { bg: string; darkBg: string; accent: string; label: string }
@@ -114,7 +113,6 @@ export default function HabitCard({
         boxShadow: "var(--shadow-card)",
       }}
     >
-      {/* Colored top strip */}
       <div
         style={{
           background: isCompletedToday ? `var(--green-accent)` : palette.accent,
@@ -245,7 +243,6 @@ export default function HabitCard({
           </div>
         </div>
 
-        {/* Action buttons — compact row */}
         <div className="mt-3 flex items-center gap-2">
           <button
             data-testid={`habit-edit-${slug}`}
