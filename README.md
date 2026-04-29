@@ -341,11 +341,27 @@ These decisions align with the requirement to keep the system **deterministic an
 - **Integration Tests (RTL)** → auth and habit flows
 - **E2E Tests (Playwright)** → full user journey
 
-### Coverage
+### Coverage Report
+
+## 📊 Coverage Report
+
+The project uses Vitest with v8 coverage.
+
+Latest coverage:
+
+- Lines: 96.15%
+- Branches: 100%
+- Functions: 83.33%
+- Statements: 96.15%
+
+To generate coverage locally:
+
+````bash
+npm run test:unit
 
 ```txt
 96.15% line coverage in src/lib
-```
+````
 
 This exceeds the required **80% minimum**.
 
