@@ -27,7 +27,6 @@ export default function LoginForm() {
       style={{ background: "var(--bg-base)" }}
     >
       <div className="w-full max-w-sm">
-        {/* Logo mark */}
         <div className="mb-6 flex flex-col items-center text-center">
           <div
             className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-white"
